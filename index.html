@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500/style.css?_cacheOverride=1705692035893">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap&amp;_cacheOverride=1705692035893"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css?_cacheOverride=1705692035893"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <main>
+        <nav>
+            <div class="navbar">
+                <div class="portion1">
+
+                    <div class="logo">
+                        <img src="data:image/png;base64,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"
+                            alt="">
+                        <span class="ham">
+                            <i class="fa-solid fa-bars"></i>
+                            <span> Categories </span>
+                        </span>
+                    </div>
+
+
+
+                    <div class="searchbar">
+                        <input type="" placeholder="Serach for anything">
+                        <div class="searchicon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                    <div class="sign">
+                        <span>sign in</span>
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                </div>
+                <div class="portion2">
+                    <p>Valentine’s Day Shop</p>
+                    <p>Home Favourites</p>
+                    <p>Fashion Finds</p>
+                    <p>Gift Guides</p>
+                    <p>Registry</p>
+                </div>
+            </div>
+        </nav>
+
+        <section class="section1">
+            <h1 class="head1">Find things you'll love. Support independent sellers. Only on Etsy.</h1>
+
+
+            <div class="items">
+
+
+                <div class="item">
+                    <img src="https://i.etsystatic.com/25792760/r/il/5da611/3405911484/il_300x300.3405911484_go20.jpg"
+                        alt="">
+                    <h3>personlized gift</h3>
+                </div>
+
+                <div class="item">
+                    <img src="https://i.etsystatic.com/20442851/c/2000/2000/500/0/il/a99d85/2952846478/il_300x300.2952846478_jtqc.jpg"
+                        alt="">
+                    <h3>DIY &amp; Crafts</h3>
+                </div>
+
+                <div class="item">
+                    <img src="https://i.etsystatic.com/14340206/r/il/34b534/5662388029/il_300x300.5662388029_1aa2.jpg"
+                        alt="">
+                    <h3>For Kids &amp; Babies </h3>
+                </div>
+
+                <div class="item">
+                    <img src="https://i.etsystatic.com/5824932/c/1538/1538/355/215/il/1dd019/1884746319/il_300x300.1884746319_o3sd.jpg"
+                        alt="">
+                    <h3>Jewelry</h3>
+                </div>
+
+                <div class="item">
+                    <img src="https://i.etsystatic.com/17207134/c/769/769/197/59/il/913c7a/3121451996/il_300x300.3121451996_695g.jpg"
+                        alt="">
+                    <h3>Wedding &amp; Engagement</h3>
+                </div>
+
+                <div class="item">
+                    <img src="https://i.etsystatic.com/13346155/c/2734/2734/0/0/il/858e00/5080130415/il_300x300.5080130415_qb0m.jpg"
+                        alt="">
+                    <h3>On sale</h3>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section2">
+            <h1 class="head1">Shop By category</h1>
+
+
+            <div class="category">
+
+
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/11326925/c/1512/1201/0/310/il/582a10/3704219961/il_680x540.3704219961_ckr2.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/5204269/c/888/706/201/265/il/462ec1/1000393416/il_680x540.1000393416_qf5c.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/9986723/r/il/c489a7/3784663223/il_680x540.3784663223_eum8.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/21475936/c/2000/1589/0/1341/il/63335d/4055185948/il_680x540.4055185948_gpg6.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/5694172/r/il/b56e39/480340698/il_680x540.480340698_4y6r.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/5863761/c/1923/1527/16/743/il/8cbd6c/1390117214/il_680x540.1390117214_f338.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+
+
+            </div>
+            <div class="category">
+
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/14367613/r/il/132de7/4895345185/il_680x540.4895345185_abr9.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/27025196/c/2025/1611/0/0/il/d7ed4a/4993068433/il_680x540.4993068433_99hf.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/5681268/r/il/1a172e/1340668142/il_680x540.1340668142_gl4u.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/11544420/c/2777/2207/118/35/il/c420f3/5339022152/il_680x540.5339022152_oz9w.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/5186425/r/il/21ee8b/1955410074/il_680x540.1955410074_9cbf.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+                <div class="catbox">
+                    <img src="https://i.etsystatic.com/10929740/r/il/7910c0/1010913032/il_680x540.1010913032_gzsb.jpg"
+                        alt="">
+                    <p>home &amp; living</p>
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+        <section class="section3">
+
+            <h1 class="head2">Popular gifts right now</h1>
+            <div class="products">
+
+
+                <div class="product">
+                    <img src="https://i.etsystatic.com/10907262/c/705/560/14/124/il/35c6bc/1504156133/il_340x270.1504156133_pdtu.jpg"
+                        alt="">
+                    <h3>Personalized Bookmark With Name,Bookmark for Her,Gift for Book Lovers,</h3>
+                    <div class="stars">
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span>(5,497)</span>
+                    </div>
+                    <div class="price">
+                        <h3>USD 5.80</h3>
+                        <del>USD 14.51</del>
+                        <P>(60% OFF)</P>
+
+
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="https://i.etsystatic.com/35363247/r/il/3e44f9/5386341636/il_340x270.5386341636_878v.jpg"
+                        alt="">
+                    <h3>Personalized Bookmark With Name,Bookmark for Her,Gift for Book Lovers,</h3>
+                    <div class="stars">
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span>(5,497)</span>
+                    </div>
+                    <div class="price">
+                        <h3>USD 5.80</h3>
+                        <del>USD 14.51</del>
+                        <P>(60% OFF)</P>
+
+
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="https://i.etsystatic.com/35363247/r/il/3e44f9/5386341636/il_340x270.5386341636_878v.jpg"
+                        alt="">
+                    <h3>Personalized Bookmark With Name,Bookmark for Her,Gift for Book Lovers,</h3>
+                    <div class="stars">
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span>(5,497)</span>
+                    </div>
+                    <div class="price">
+                        <h3>USD 5.80</h3>
+                        <del>USD 14.51</del>
+                        <P>(60% OFF)</P>
+
+
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="https://i.etsystatic.com/35363247/r/il/3e44f9/5386341636/il_340x270.5386341636_878v.jpg"
+                        alt="">
+                    <h3>Personalized Bookmark With Name,Bookmark for Her,Gift for Book Lovers,</h3>
+                    <div class="stars">
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span>(5,497)</span>
+                    </div>
+                    <div class="price">
+                        <h3>USD 5.80</h3>
+                        <del>USD 14.51</del>
+                        <P>(60% OFF)</P>
+
+
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="https://i.etsystatic.com/35363247/r/il/3e44f9/5386341636/il_340x270.5386341636_878v.jpg"
+                        alt="">
+                    <h3>Personalized Bookmark With Name,Bookmark for Her,Gift for Book Lovers,</h3>
+                    <div class="stars">
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span><i class="fa-solid fa-star"></i></span>
+                        <span>(5,497)</span>
+                    </div>
+                    <div class="price">
+                        <h3>USD 5.80</h3>
+                        <del>USD 14.51</del>
+                        <P>(60% OFF)</P>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section4">
+            <h1 class="head1 align">Shop our popular gift categories</h1>
+
+            <div class="pop">
+
+
+
+                <div class="popbox">
+                    <img src="https://i.etsystatic.com/6473273/r/il/4dede6/3158233318/il_340x270.3158233318_r0mf.jpg"
+                        alt="">
+                    <h3>Gifts for him</h3>
+                </div>
+
+
+                <div class="popbox">
+                    <img src="https://i.etsystatic.com/18922075/r/il/a2f6fd/3007384323/il_340x270.3007384323_11i0.jpg"
+                        alt="">
+                    <h3>Gifts for him</h3>
+                </div>
+
+
+                <div class="popbox">
+                    <img src="https://i.etsystatic.com/20922675/r/il/e5332f/4993914558/il_340x270.4993914558_c6cv.jpg"
+                        alt="">
+                    <h3>Gifts for him</h3>
+                </div>
+
+
+
+
+                <div class="popbox">
+                    <img src="https://i.etsystatic.com/6322679/r/il/6e2e53/1668127003/il_340x270.1668127003_kwjn.jpg"
+                        alt="">
+                    <h3>Gifts for him</h3>
+                </div>
+                <div class="popbox">
+                    <img src="https://i.etsystatic.com/12468628/r/il/e77eb3/4564121111/il_340x270.4564121111_m7ur.jpg"
+                        alt="">
+                    <h3>Gifts for him</h3>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <footer>
+
+            <div class="leftf">
+
+                <div class="img">
+                    <img src="images/download-removebg-preview.png" alt="">
+                </div>
+                <button>Download the Etsy App</button>
+
+            </div>
+            <div class="rightf">
+
+
+                <div class="footElem">
+                    <h3>Shop</h3>
+                    <p>Gift cards</p>
+                    <p>Etsy Registry</p>
+                    <p>Etsy blog</p>
+                    <p>Site map</p>
+                    <p>Etsy United Kingdom</p>
+                    <p>Etsy Germany</p>
+                    <p>Etsy Canada</p>
+                </div>
+
+                <div class="footElem">
+                    <h3>Sell</h3>
+                    <p>Sell on Etsy</p>
+                    <p>Teams</p>
+                    <p>Forums</p>
+                    <p>Affiliates & Creators</p>
+
+                </div>
+
+                <div class="footElem">
+                    <h3>About</h3>
+                    <p>Etsy, Inc.</p>
+                    <p>Policies</p>
+                    <p>Investors</p>
+                    <p>Careers</p>
+                    <p>Press</p>
+                    <p>Impact</p>
+                    <p>Legal imprint</p>
+                </div>
+
+                <div class="footElem">
+                    <h3>Help</h3>
+                    <p>Help Centre</p>
+                    <p>Privacy settings</p>
+
+                </div>
+
+
+            </div>
+        </footer>
+    </main>
+
+
+</body>
+
+</html>
